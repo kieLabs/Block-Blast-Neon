@@ -112,6 +112,58 @@
  #gkbn-game .gk-card{padding:6px}
  #gkbn-game .gk-next-canvas{height:43px}
 }
+
+/* Fullscreen play layout: compact HUD on one line, large centered board, controls below. */
+#gkbn-game:fullscreen{height:100dvh;min-height:100dvh;max-height:100dvh;overflow:hidden;display:flex;flex-direction:column;padding:0;border:0;border-radius:0}
+#gkbn-game:fullscreen .gk-header{flex:0 0 auto;padding:6px 10px;gap:8px;min-height:48px}
+#gkbn-game:fullscreen .gk-layout{flex:1 1 auto;min-height:0;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);gap:5px;padding:5px 8px}
+#gkbn-game:fullscreen .gk-layout>.gk-side:first-child{display:flex;align-items:stretch;gap:5px;order:0;min-width:0;overflow:hidden}
+#gkbn-game:fullscreen .gk-layout>.gk-side:first-child .gk-card{flex:1;min-width:0;padding:5px 8px;display:flex;flex-direction:column;justify-content:center}
+#gkbn-game:fullscreen .gk-layout>.gk-side:first-child .gk-score{font-size:clamp(14px,2.4vh,23px);line-height:1.15}
+#gkbn-game:fullscreen .gk-layout>.gk-side:first-child .gk-mini-value{font-size:clamp(13px,2.2vh,20px);margin-top:1px}
+#gkbn-game:fullscreen .gk-layout>.gk-center{order:1;min-height:0;align-items:center;overflow:hidden}
+#gkbn-game:fullscreen .gk-layout>.gk-side:last-child{display:none}
+#gkbn-game:fullscreen .gk-board-wrap{width:auto;height:100%;max-height:100%;max-width:min(100%,calc((100dvh - 165px)/2));aspect-ratio:1/2;padding:4px;flex:0 1 auto}
+#gkbn-game:fullscreen #gkbn-board{height:100%;width:auto;max-width:100%;aspect-ratio:1/2}
+#gkbn-game:fullscreen .gk-controls{flex:0 0 auto;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;padding:0 8px 6px}
+#gkbn-game:fullscreen .gk-btn{min-height:clamp(36px,6.5vh,48px);font-size:clamp(9px,1.5vh,12px);padding:3px}
+#gkbn-game:fullscreen .gk-btn-symbol{font-size:clamp(13px,2.2vh,18px)}
+#gkbn-game:fullscreen .gk-footer{flex:0 0 auto;padding:2px 8px 5px;font-size:9px}
+#gkbn-game .gk-help-tabs{display:flex;gap:8px;margin-bottom:12px}
+#gkbn-game .gk-help-tab{flex:1;padding:10px 8px;border:1px solid #345579;border-radius:10px;background:#0b1530;font-weight:900}
+#gkbn-game .gk-help-tab.active{background:linear-gradient(100deg,#12394c,#25204b);border-color:#35e7ff;color:#8ff5ff}
+#gkbn-game .gk-help-content{font-size:13px;line-height:1.6;color:#c4d4ec}
+#gkbn-game .gk-help-content h3{color:#35e7ff;margin:14px 0 5px;font-size:14px}
+#gkbn-game .gk-help-content ul{padding-left:19px;margin:5px 0 12px}
+#gkbn-game .gk-help-content li{margin:4px 0}
+#gkbn-game .gk-help-content kbd{display:inline-block;padding:1px 6px;border:1px solid #426184;border-radius:5px;background:#081226;color:#fff;font:inherit;font-size:11px}
+@media(max-width:700px){
+ #gkbn-game:fullscreen .gk-header{padding:4px 6px;gap:5px}
+ #gkbn-game:fullscreen .gk-brand{font-size:8px;letter-spacing:.5px}
+ #gkbn-game:fullscreen .gk-brand-mark{width:21px;height:21px}
+ #gkbn-game:fullscreen .gk-title{font-size:clamp(11px,3.3vw,17px)}
+ #gkbn-game:fullscreen .gk-iconbtn{min-width:31px;height:31px;font-size:15px}
+ #gkbn-game:fullscreen .gk-layout{padding:4px 5px;gap:4px}
+ #gkbn-game:fullscreen .gk-layout>.gk-side:first-child{gap:3px}
+ #gkbn-game:fullscreen .gk-layout>.gk-side:first-child .gk-card{padding:4px;min-width:0}
+ #gkbn-game:fullscreen .gk-label{font-size:7px;letter-spacing:.4px}
+ #gkbn-game:fullscreen .gk-layout>.gk-side:first-child .gk-score{font-size:clamp(12px,3.5vw,17px)}
+ #gkbn-game:fullscreen .gk-layout>.gk-side:first-child .gk-mini-value{font-size:clamp(11px,3.2vw,16px)}
+ #gkbn-game:fullscreen .gk-board-wrap{max-width:min(100%,calc((100dvh - 160px)/2));padding:3px}
+ #gkbn-game:fullscreen .gk-controls{gap:3px;padding:0 5px 4px}
+ #gkbn-game:fullscreen .gk-btn{min-height:35px;font-size:8px;letter-spacing:0;border-radius:8px}
+ #gkbn-game:fullscreen .gk-btn-symbol{font-size:13px;margin-bottom:0}
+ #gkbn-game:fullscreen .gk-footer{font-size:8px}
+}
+@media(orientation:landscape) and (max-height:520px){
+ #gkbn-game:fullscreen .gk-header{min-height:38px;padding:3px 8px}
+ #gkbn-game:fullscreen .gk-layout{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);padding:3px 6px;gap:3px}
+ #gkbn-game:fullscreen .gk-layout>.gk-side:first-child .gk-card{padding:2px 7px}
+ #gkbn-game:fullscreen .gk-board-wrap{max-width:min(100%,calc((100dvh - 118px)/2))}
+ #gkbn-game:fullscreen .gk-controls{padding-bottom:3px}
+ #gkbn-game:fullscreen .gk-btn{min-height:30px}
+ #gkbn-game:fullscreen .gk-footer{display:none}
+}
 </style>
 </head>
 <body style="margin:0;background:#03050d;padding:8px">
@@ -130,6 +182,7 @@
    <section class="gk-card"><div class="gk-label">Best Score</div><div class="gk-mini-value" id="gkbn-best">0</div></section>
    <section class="gk-card"><div class="gk-label">Level</div><div class="gk-mini-value" id="gkbn-level">1</div></section>
    <section class="gk-card"><div class="gk-label">Lines Cleared</div><div class="gk-mini-value" id="gkbn-lines">0</div></section>
+   <section class="gk-card"><div class="gk-label">Next Blocks</div><div class="gk-next-stack"><canvas class="gk-next-canvas" id="gkbn-next0" width="120" height="65"></canvas><canvas class="gk-next-canvas" id="gkbn-next1" width="120" height="65"></canvas><canvas class="gk-next-canvas" id="gkbn-next2" width="120" height="65"></canvas></div></section>
   </aside>
   <section class="gk-center">
    <div class="gk-board-wrap">
@@ -146,7 +199,7 @@
    </div>
   </section>
   <aside class="gk-side">
-   <section class="gk-card"><div class="gk-label">Next Blocks</div><div class="gk-next-stack"><canvas class="gk-next-canvas" id="gkbn-next0" width="120" height="65"></canvas><canvas class="gk-next-canvas" id="gkbn-next1" width="120" height="65"></canvas><canvas class="gk-next-canvas" id="gkbn-next2" width="120" height="65"></canvas></div></section>
+
    <section class="gk-card"><div class="gk-label">Controls</div><div style="font-size:11px;line-height:1.8;color:#9cb7d8;margin-top:7px">← → Move<br>↑ / X Rotate<br>Z Reverse rotate<br>↓ Soft drop<br>SPACE Hard drop<br>P Pause</div></section>
    <button class="gk-btn gold" id="gkbn-pause-side">Ⅱ PAUSE</button>
   </aside>
@@ -163,6 +216,8 @@
  <section class="gk-modal" id="gkbn-settings-modal" hidden>
   <div class="gk-modal-box" role="dialog" aria-modal="true" aria-labelledby="gkbn-settings-title">
    <div class="gk-modal-head"><h2 id="gkbn-settings-title">⚙ Game Settings</h2><button class="gk-close" id="gkbn-settings-close" aria-label="Close settings">×</button></div>
+   <div class="gk-help-tabs"><button class="gk-help-tab active" id="gkbn-tab-settings" type="button">⚙ Settings</button><button class="gk-help-tab" id="gkbn-tab-help" type="button">❔ How to Play</button></div>
+   <div id="gkbn-settings-page">
    <div class="gk-setting-row"><div><label>Sound Effects</label><small>Movement, rotate, drop and clear sounds</small></div><button class="gk-toggle on" id="gkbn-sfx-toggle">ON</button></div>
    <div class="gk-setting-row"><div><label>Background Music</label><small>Original synthesized arcade loop</small></div><button class="gk-toggle on" id="gkbn-music-toggle">ON</button></div>
    <div class="gk-setting-row"><label for="gkbn-master-vol">Master Volume <span id="gkbn-master-val">65%</span></label><input class="gk-range" id="gkbn-master-vol" type="range" min="0" max="100" value="65"></div>
@@ -171,6 +226,16 @@
    <div class="gk-setting-row"><div><label>Vibration</label><small>Short haptic feedback where supported</small></div><button class="gk-toggle" id="gkbn-vibe-toggle">OFF</button></div>
    <button class="gk-primary" id="gkbn-settings-done">SAVE & CLOSE</button>
    <p class="gk-modal-note">Audio starts after your first interaction because browsers block autoplay. Preferences are saved on this device.</p>
+   </div>
+   <div id="gkbn-help-page" class="gk-help-content" hidden>
+    <h3>🎯 Goal</h3><p>Move falling neon blocks, complete horizontal lines, clear them from the board and earn the highest score. The game gets faster as your level rises.</p>
+    <h3>📱 Touch controls</h3><ul><li><b>Tap the board:</b> rotate the current block.</li><li><b>Swipe left / right:</b> move the block in that direction. Longer swipes move it farther.</li><li><b>Swipe down:</b> soft-drop the block; a quick long downward swipe performs a hard drop.</li><li><b>Buttons below the board:</b> LEFT, ROTATE, RIGHT, HOLD DOWN, HARD DROP and PAUSE.</li></ul>
+    <h3>⌨️ Keyboard controls</h3><ul><li><kbd>←</kbd> / <kbd>→</kbd> Move left or right.</li><li><kbd>↑</kbd> or <kbd>X</kbd> Rotate clockwise; <kbd>Z</kbd> rotates backwards.</li><li><kbd>↓</kbd> Soft drop; hold it to move down faster.</li><li><kbd>SPACE</kbd> Hard drop straight down.</li><li><kbd>P</kbd> Pause or resume; <kbd>ESC</kbd> exits fullscreen or closes this panel.</li></ul>
+    <h3>⭐ Score, levels and speed</h3><ul><li>Clearing lines awards points; clearing multiple lines at once earns more.</li><li>Every 10 cleared lines advances a level.</li><li>Each new level increases automatic falling speed. Soft drop and hard drop help you control the pace.</li><li>Your best score is saved on this device.</li></ul>
+    <h3>🧩 Next blocks and ghost piece</h3><p>The NEXT BLOCKS previews show upcoming pieces. The translucent outline on the board shows where the active block will land if dropped.</p>
+    <h3>⚙ Settings</h3><p>Use Settings to turn sound effects, background music and vibration on or off, and adjust volume. Audio may begin only after your first tap because of browser restrictions.</p>
+    <button class="gk-primary" id="gkbn-help-back" type="button">BACK TO SETTINGS</button>
+   </div>
   </div>
  </section>
 </div>
@@ -195,7 +260,7 @@ const STORE={best:'gkbn_best_v1',settings:'gkbn_settings_v1'};
 const defaults={sfx:true,music:true,vibe:false,master:65,sfxVol:75,musicVol:22};
 let settings={...defaults};try{settings={...settings,...JSON.parse(localStorage.getItem(STORE.settings)||'{}')}}catch(e){}
 let board=[],active=null,queue=[],score=0,best=0,level=1,lines=0,state='start';
-let lastTime=0,gravityAcc=0,softAcc=0,moveDir=0,moveHeldAt=0,moveRepeatAt=0,downHeld=false;
+let lastTime=0,gravityAcc=0,softAcc=0,moveDir=0,moveHeldAt=0,moveRepeatAt=0,downHeld=false,gameStartedAt=0;
 let particles=[],clearingRows=[],clearAnim=0,shake=0,animTime=0,renderW=300,renderH=600,cell=30;
 let audioCtx=null,masterGain=null,sfxGain=null,musicGain=null,musicTimer=null,musicStep=0,activeOsc=[];
 try{best=Number(localStorage.getItem(STORE.best)||0)||0}catch(e){}
@@ -230,7 +295,7 @@ function rotateMatrix(m,dir=1){const n=m.length,out=Array.from({length:n},()=>Ar
 function makePiece(type){const shape=matrixCopy(SHAPES[type]);return {type,shape,x:Math.floor((COLS-shape[0].length)/2),y:-1,color:COLORS[type]}}
 function fillQueue(){while(queue.length<5){const types=Object.keys(SHAPES);for(let i=types.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[types[i],types[j]]=[types[j],types[i]]}queue.push(...types)}}
 function spawn(){fillQueue();active=makePiece(queue.shift());fillQueue();gravityAcc=0;softAcc=0;drawPreviews();if(collides(active,active.x,active.y,active.shape)){state='over';$('gkbn-over-overlay').hidden=false;$('gkbn-final-score').textContent=score.toLocaleString();saveBest();$('gkbn-final-best').textContent=best.toLocaleString();sfx('over');return false}return true}
-function resetGame(){board=Array.from({length:ROWS},()=>Array(COLS).fill(null));queue=[];particles=[];clearingRows=[];clearAnim=0;score=0;level=1;lines=0;gravityAcc=0;softAcc=0;moveDir=0;downHeld=false;state='playing';$('gkbn-start-overlay').hidden=true;$('gkbn-pause-overlay').hidden=true;$('gkbn-over-overlay').hidden=true;updateStats();fillQueue();spawn();interaction();lastTime=performance.now()}
+function resetGame(){board=Array.from({length:ROWS},()=>Array(COLS).fill(null));queue=[];particles=[];clearingRows=[];clearAnim=0;score=0;level=1;lines=0;gravityAcc=0;softAcc=0;moveDir=0;downHeld=false;gameStartedAt=performance.now();state='playing';$('gkbn-start-overlay').hidden=true;$('gkbn-pause-overlay').hidden=true;$('gkbn-over-overlay').hidden=true;updateStats();fillQueue();spawn();interaction();lastTime=performance.now()}
 function collides(p,nx,ny,shape=p.shape){for(let y=0;y<shape.length;y++)for(let x=0;x<shape[y].length;x++)if(shape[y][x]){const bx=nx+x,by=ny+y;if(bx<0||bx>=COLS||by>=ROWS)return true;if(by>=0&&board[by][bx])return true}return false}
 function move(dx){if(state!=='playing'||!active)return false;if(!collides(active,active.x+dx,active.y)){active.x+=dx;sfx('move');return true}return false}
 function rotate(dir=1){if(state!=='playing'||!active)return;const shape=rotateMatrix(active.shape,dir),kicks=[0,-1,1,-2,2,-3,3];for(const k of kicks){if(!collides(active,active.x+k,active.y,shape)){active.shape=shape;active.x+=k;sfx('rotate');return}}}
@@ -267,7 +332,7 @@ function render(now){const w=renderW,h=renderH;ctx.clearRect(0,0,w,h);ctx.fillSt
 function frame(now){const dt=Math.min(.05,(now-lastTime)/1000||0);lastTime=now;animTime=now;
  if(state==='playing'){
   if(clearingRows.length){clearAnim-=dt;if(clearAnim<=0)finishClear()}
-  else if(active){gravityAcc+=dt;const interval=Math.max(.075,.82*Math.pow(.82,level-1));if(downHeld){softAcc+=dt;const repeat=.035;if(softAcc>=repeat){softAcc=0;stepDown(true)}}else if(gravityAcc>=interval){gravityAcc=0;stepDown(false)}
+  else if(active){gravityAcc+=dt;const elapsedMinutes=Math.max(0,(now-gameStartedAt)/60000);const timeFactor=Math.max(.62,1-elapsedMinutes*.045);const scoreFactor=Math.max(.62,1-score/60000);const interval=Math.max(.075,.82*Math.pow(.82,level-1)*timeFactor*scoreFactor);if(downHeld){softAcc+=dt;const repeat=.035;if(softAcc>=repeat){softAcc=0;stepDown(true)}}else if(gravityAcc>=interval){gravityAcc=0;stepDown(false)}
    if(moveDir&&now>=moveRepeatAt){move(now>=moveHeldAt+170?moveDir:moveDir);moveRepeatAt=now+Math.max(45,115-level*3)}
   }
  }
@@ -287,14 +352,21 @@ $('gkbn-rotate').addEventListener('pointerdown',e=>{e.preventDefault();interacti
 $('gkbn-drop').addEventListener('pointerdown',e=>{e.preventDefault();interaction();hardDrop()});
 $('gkbn-pause').addEventListener('click',()=>{interaction();if(state==='paused')resume();else togglePause()});
 $('gkbn-pause-side').addEventListener('click',()=>{interaction();togglePause()});
-canvas.addEventListener('pointerdown',e=>{e.preventDefault();interaction();if(state!=='playing')return;const r=canvas.getBoundingClientRect(),x=(e.clientX-r.left)/r.width;if(x<.27)move(-1);else if(x>.73)move(1);else rotate(1)});
+let boardGesture=null;
+canvas.addEventListener('pointerdown',e=>{e.preventDefault();interaction();if(state!=='playing')return;boardGesture={id:e.pointerId,x:e.clientX,y:e.clientY,t:performance.now()};try{canvas.setPointerCapture(e.pointerId)}catch(_){} });
+canvas.addEventListener('pointerup',e=>{if(!boardGesture||boardGesture.id!==e.pointerId)return;const g=boardGesture;boardGesture=null;const dx=e.clientX-g.x,dy=e.clientY-g.y,ax=Math.abs(dx),ay=Math.abs(dy),elapsed=performance.now()-g.t;if(state!=='playing')return;if(ax<14&&ay<14){rotate(1);return}if(ax>ay){const steps=Math.max(1,Math.min(5,Math.round(ax/42)));for(let i=0;i<steps;i++)move(dx<0?-1:1)}else if(dy>0){if(dy>95&&elapsed<420){hardDrop()}else{const steps=Math.max(1,Math.min(12,Math.round(dy/22)));for(let i=0;i<steps;i++)stepDown(true)}}else{rotate(1)}});
+canvas.addEventListener('pointercancel',()=>{boardGesture=null});
 canvas.addEventListener('contextmenu',e=>e.preventDefault());
 $('gkbn-start').addEventListener('click',()=>{interaction();resetGame()});
 $('gkbn-resume').addEventListener('click',()=>resume());
 $('gkbn-restart-pause').addEventListener('click',()=>{interaction();resetGame()});
 $('gkbn-restart-over').addEventListener('click',()=>{interaction();resetGame()});
 $('gkbn-home').addEventListener('click',()=>{state='start';releaseInputs();$('gkbn-over-overlay').hidden=true;$('gkbn-start-overlay').hidden=false;active=null});
-function settingsModal(show){$('gkbn-settings-modal').hidden=!show;if(show)releaseInputs()}
+function showSettingsPage(page){const help=page==='help';$('gkbn-settings-page').hidden=help;$('gkbn-help-page').hidden=!help;$('gkbn-tab-settings').classList.toggle('active',!help);$('gkbn-tab-help').classList.toggle('active',help)}
+$('gkbn-tab-settings').addEventListener('click',()=>showSettingsPage('settings'));
+$('gkbn-tab-help').addEventListener('click',()=>showSettingsPage('help'));
+$('gkbn-help-back').addEventListener('click',()=>showSettingsPage('settings'));
+function settingsModal(show){$('gkbn-settings-modal').hidden=!show;if(show){releaseInputs();showSettingsPage('settings')}}
 $('gkbn-settings-open').addEventListener('click',()=>{interaction();settingsModal(true);sfx('click')});
 $('gkbn-settings-close').addEventListener('click',()=>settingsModal(false));$('gkbn-settings-done').addEventListener('click',()=>{saveSettings();settingsModal(false);musicState()});
 function setToggle(id,key){const b=$(id);const sync=()=>{b.textContent=settings[key]?'ON':'OFF';b.classList.toggle('on',settings[key])};sync();b.addEventListener('click',()=>{settings[key]=!settings[key];sync();saveSettings();musicState();interaction()})}
