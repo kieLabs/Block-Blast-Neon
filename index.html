@@ -6,48 +6,55 @@
 <meta name="theme-color" content="#050816">
 <title>BLOCK BLAST NEON — GamerKie</title>
 <style>
+html,body{margin:0;padding:0;width:100%;height:100%;background:#03050d;overflow:hidden}
 /* All styles are scoped to #gkbn-game to avoid affecting a Blogger theme. */
-#gkbn-game{--bg:#050816;--panel:#0b1227;--cyan:#35e7ff;--blue:#4388ff;--purple:#a76bff;--pink:#ff4fd8;--gold:#ffd166;--text:#f2f7ff;position:relative;isolation:isolate;width:100%;max-width:1200px;margin:0 auto;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 50% -20%,#172957 0%,#080d20 48%,#03050e 100%);border:1px solid #1c4770;border-radius:22px;overflow:hidden;box-shadow:0 0 40px #1675ff20,inset 0 0 45px #122d5520;touch-action:pan-y}
+#gkbn-game{--bg:#050816;--panel:#0b1227;--cyan:#35e7ff;--blue:#4388ff;--purple:#a76bff;--pink:#ff4fd8;--gold:#ffd166;--text:#f2f7ff;position:relative;isolation:isolate;width:100%;height:100dvh;max-width:760px;margin:0 auto;display:flex;flex-direction:column;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 50% -20%,#172957 0%,#080d20 48%,#03050e 100%);border:1px solid #1c4770;border-radius:18px;overflow:hidden;box-shadow:0 0 40px #1675ff20,inset 0 0 45px #122d5520;touch-action:none}
 #gkbn-game *{box-sizing:border-box}
 #gkbn-game button,#gkbn-game input{font:inherit}
 #gkbn-game button{color:var(--text);cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 #gkbn-game button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 #gkbn-game .gk-stars{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:-1;background-image:radial-gradient(1px 1px at 8% 12%,#fff9 50%,transparent 60%),radial-gradient(1px 1px at 83% 22%,#6cefff99 50%,transparent 60%),radial-gradient(1.5px 1.5px at 63% 77%,#c79cff88 50%,transparent 60%),radial-gradient(1px 1px at 28% 83%,#fff8 50%,transparent 60%);animation:gkDrift 12s linear infinite}
 @keyframes gkDrift{50%{transform:translateY(-9px)}}
-#gkbn-game .gk-header{display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #21456a88;background:#050a18cc}
-#gkbn-game .gk-brand{font-size:12px;font-weight:900;letter-spacing:2px;color:var(--cyan);white-space:nowrap}
-#gkbn-game .gk-brand-mark{display:inline-grid;place-items:center;width:28px;height:28px;margin-right:6px;border-radius:8px;background:linear-gradient(135deg,#1ce8ff,#7558ff);color:#041020;box-shadow:0 0 16px #35e7ff66}
-#gkbn-game .gk-title{margin:0;flex:1;text-align:center;font-size:clamp(16px,3vw,25px);font-weight:1000;letter-spacing:1.4px;line-height:1.1;text-shadow:0 0 15px #31dfff66}
+
+/* Top Header Bar */
+#gkbn-game .gk-header{flex:0 0 auto;display:flex;align-items:center;gap:6px;padding:8px 10px;border-bottom:1px solid #21456a88;background:#050a18eb;z-index:3}
+#gkbn-game .gk-brand{display:flex;align-items:center;font-size:10px;font-weight:900;letter-spacing:1.2px;color:var(--cyan);white-space:nowrap}
+#gkbn-game .gk-brand-mark{display:inline-grid;place-items:center;width:26px;height:26px;margin-right:5px;border-radius:7px;background:linear-gradient(135deg,#1ce8ff,#7558ff);color:#041020;font-weight:900;box-shadow:0 0 14px #35e7ff66}
+#gkbn-game .gk-title{margin:0;flex:1;min-width:0;text-align:center;font-size:clamp(13px,3.5vw,21px);font-weight:1000;letter-spacing:1px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 0 15px #31dfff66}
 #gkbn-game .gk-title em{font-style:normal;color:var(--pink)}
-#gkbn-game .gk-iconbtn{min-width:40px;height:40px;border:1px solid #315b85;border-radius:12px;background:linear-gradient(145deg,#142541,#080f22);box-shadow:inset 0 1px #ffffff18,0 0 12px #197bff18;font-size:18px}
-#gkbn-game .gk-iconbtn:active,#gkbn-game .gk-btn:active{transform:translateY(1px) scale(.98);filter:brightness(1.3)}
-#gkbn-game .gk-status{font-size:10px;color:#8fa8c9;display:block;text-align:center;margin-top:3px}
-#gkbn-game .gk-layout{display:grid;grid-template-columns:minmax(110px,175px) minmax(0,1fr) minmax(110px,175px);gap:13px;padding:15px;align-items:start}
-#gkbn-game .gk-side{display:grid;gap:11px}
-#gkbn-game .gk-card{background:linear-gradient(145deg,#111d36d9,#080e20ed);border:1px solid #21466b;border-radius:15px;padding:12px;box-shadow:inset 0 1px #ffffff0a,0 8px 20px #0003}
-#gkbn-game .gk-label{font-size:10px;font-weight:900;letter-spacing:1.7px;color:#8aa9d0;text-transform:uppercase}
-#gkbn-game .gk-score{font-size:clamp(21px,3vw,30px);font-weight:950;line-height:1.3;color:#fff;text-shadow:0 0 13px #3beaff55;overflow-wrap:anywhere}
-#gkbn-game .gk-mini-value{font-size:20px;font-weight:900;margin-top:4px}
-#gkbn-game .gk-next-stack{display:grid;gap:6px;margin-top:8px}
-#gkbn-game .gk-next-canvas{display:block;width:100%;height:65px;background:#060b19;border:1px solid #1d3558;border-radius:9px}
-#gkbn-game .gk-center{min-width:0;display:flex;justify-content:center}
-#gkbn-game .gk-board-wrap{position:relative;width:min(100%,440px);padding:7px;border-radius:17px;background:linear-gradient(145deg,#26e8ff,#3d65ff 45%,#c34cff);box-shadow:0 0 18px #16baff55,0 0 38px #4d55ff25}
-#gkbn-game #gkbn-board{display:block;width:100%;height:auto;aspect-ratio:1/2;background:#050a18;border-radius:11px;touch-action:none;user-select:none}
-#gkbn-game .gk-board-hint{font-size:10px;color:#87a3c9;text-align:center;margin-top:7px}
-#gkbn-game .gk-controls{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;padding:0 15px 15px}
-#gkbn-game .gk-btn{min-height:48px;border-radius:13px;border:1px solid #31608b;background:linear-gradient(145deg,#152846,#080f21);font-weight:900;font-size:12px;letter-spacing:.4px;box-shadow:inset 0 1px #ffffff16,0 4px 12px #0003;transition:transform .1s,filter .1s,border-color .1s}
-#gkbn-game .gk-btn .gk-btn-symbol{display:block;font-size:18px;line-height:1.1;margin-bottom:2px}
-#gkbn-game .gk-btn.cyan{border-color:#23dff2;box-shadow:inset 0 0 12px #1cecff14,0 0 12px #14dfff18}
-#gkbn-game .gk-btn.purple{border-color:#a76bff}.gk-btn.pink{border-color:#ff4fd8}
-#gkbn-game .gk-btn.gold{border-color:#ffcf60;color:#ffe5a0}
-#gkbn-game .gk-footer{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:0 16px 14px;color:#6784a9;font-size:10px}
-#gkbn-game .gk-overlay{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;padding:18px;background:#020615d9;backdrop-filter:blur(8px);border-radius:inherit}
+#gkbn-game .gk-header-actions{display:flex;align-items:center;gap:5px;flex:0 0 auto}
+#gkbn-game .gk-iconbtn{width:35px;height:35px;padding:0;display:inline-grid;place-items:center;border:1px solid #315b85;border-radius:10px;background:linear-gradient(145deg,#142541,#080f22);box-shadow:inset 0 1px #ffffff18,0 0 12px #197bff18;font-size:16px;line-height:1}
+#gkbn-game #gkbn-pause{border-color:#ffcf60;color:#ffe5a0}
+#gkbn-game .gk-iconbtn:active{transform:translateY(1px) scale(.97);filter:brightness(1.3)}
+
+/* Main Layout: Top HUD + Centered Board */
+#gkbn-game .gk-layout{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;gap:8px;padding:8px 10px 10px;overflow:hidden}
+
+/* Top Stats HUD (Score, Best, Level, Lines, Next Blocks) */
+#gkbn-game .gk-side{flex:0 0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%;max-width:520px;margin:0 auto}
+#gkbn-game .gk-card{background:linear-gradient(145deg,#111d36d9,#080e20ed);border:1px solid #21466b;border-radius:11px;padding:6px 9px;box-shadow:inset 0 1px #ffffff0a,0 6px 16px #0003;min-width:0}
+#gkbn-game .gk-card-next{grid-column:span 2}
+#gkbn-game .gk-label{font-size:8.5px;font-weight:900;letter-spacing:1.1px;color:#8aa9d0;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#gkbn-game .gk-score{font-size:clamp(16px,4vw,22px);font-weight:950;line-height:1.2;color:#fff;text-shadow:0 0 13px #3beaff55;margin-top:2px;overflow-wrap:anywhere}
+#gkbn-game .gk-mini-value{font-size:clamp(15px,3.8vw,20px);font-weight:900;line-height:1.2;margin-top:2px;color:#fff}
+#gkbn-game .gk-next-stack{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin-top:4px}
+#gkbn-game .gk-next-canvas{display:block;width:100%;height:36px;background:#060b19;border:1px solid #1d3558;border-radius:7px}
+
+/* Center Game Board Area */
+#gkbn-game .gk-center{flex:1 1 auto;min-height:0;min-width:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#gkbn-game .gk-board-wrap{position:relative;padding:5px;border-radius:16px;background:linear-gradient(145deg,#26e8ff,#3d65ff 45%,#c34cff);box-shadow:0 0 18px #16baff55,0 0 38px #4d55ff25;overflow:hidden;display:flex;align-items:center;justify-content:center}
+#gkbn-game #gkbn-board{display:block;width:100%;height:100%;background:#050a18;border-radius:11px;touch-action:none;user-select:none}
+
+/* Overlays (Start, Pause, Game Over) */
+#gkbn-game .gk-overlay{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;padding:12px;background:#020615e0;backdrop-filter:blur(7px);border-radius:inherit;overflow:hidden}
 #gkbn-game .gk-overlay[hidden],#gkbn-game .gk-modal[hidden]{display:none}
-#gkbn-game .gk-overlay-box{width:min(100%,360px);text-align:center;padding:25px 20px;border:1px solid #3475a9;border-radius:20px;background:linear-gradient(145deg,#121e3a,#080d1c);box-shadow:0 0 35px #268eff2b}
-#gkbn-game .gk-over-title{font-size:clamp(25px,5vw,38px);font-weight:1000;letter-spacing:1px;margin:0 0 8px;text-shadow:0 0 18px #35e7ff66}
-#gkbn-game .gk-over-copy{font-size:13px;color:#9bb4d6;line-height:1.5;margin:0 0 17px}
-#gkbn-game .gk-primary{width:100%;min-height:48px;border:0;border-radius:12px;background:linear-gradient(100deg,#1ce8ff,#537aff 60%,#ba5bff);color:#041020!important;font-weight:1000;letter-spacing:1px;box-shadow:0 0 22px #3b9dff40;margin-top:8px}
-#gkbn-game .gk-secondary{width:100%;min-height:43px;border:1px solid #345579;border-radius:12px;background:#0c1730;font-weight:800;margin-top:8px}
+#gkbn-game .gk-overlay-box{width:100%;max-width:280px;max-height:100%;overflow:auto;text-align:center;padding:18px 14px;border:1px solid #3475a9;border-radius:16px;background:linear-gradient(145deg,#121e3a,#080d1c);box-shadow:0 0 35px #268eff2b}
+#gkbn-game .gk-over-title{font-size:clamp(20px,5vw,28px);font-weight:1000;letter-spacing:1px;line-height:1.1;margin:0 0 8px;text-shadow:0 0 18px #35e7ff66}
+#gkbn-game .gk-over-copy{font-size:12px;color:#9bb4d6;line-height:1.45;margin:0 0 14px}
+#gkbn-game .gk-primary{width:100%;min-height:44px;padding:10px 14px;border:0;border-radius:11px;background:linear-gradient(100deg,#1ce8ff,#537aff 60%,#ba5bff);color:#041020!important;font-size:13px;font-weight:1000;letter-spacing:1px;white-space:nowrap;box-shadow:0 0 22px #3b9dff40;margin-top:6px}
+#gkbn-game .gk-secondary{width:100%;min-height:40px;padding:8px 12px;border:1px solid #345579;border-radius:11px;background:#0c1730;font-size:12px;font-weight:800;margin-top:8px}
+
+/* Settings Modal */
 #gkbn-game .gk-modal{position:absolute;inset:0;z-index:8;display:flex;align-items:center;justify-content:center;padding:15px;background:#020615dd;backdrop-filter:blur(8px)}
 #gkbn-game .gk-modal-box{width:min(100%,440px);max-height:90%;overflow:auto;border:1px solid #3974a4;border-radius:18px;padding:18px;background:linear-gradient(145deg,#111e3a,#070d1d);box-shadow:0 0 40px #218bff28}
 #gkbn-game .gk-modal-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
@@ -60,75 +67,6 @@
 #gkbn-game .gk-toggle.on{border-color:#35e7ff;color:#69f4ff;background:#0b2b3a}
 #gkbn-game .gk-range{grid-column:1/-1;width:100%;accent-color:#35e7ff}
 #gkbn-game .gk-modal-note{color:#819cc0;font-size:11px;line-height:1.5;margin:13px 0 0}
-#gkbn-game .gk-fullscreen #gkbn-game{max-width:none}
-#gkbn-game:fullscreen{width:100%;height:100%;max-width:none;border-radius:0;overflow:auto;display:flex;flex-direction:column;padding-bottom:env(safe-area-inset-bottom);background:#050816}
-#gkbn-game:fullscreen .gk-layout{flex:1;min-height:0;align-items:center}
-#gkbn-game:fullscreen .gk-board-wrap{width:auto;height:min(100%,calc(100dvh - 235px));aspect-ratio:1/2}
-#gkbn-game:fullscreen #gkbn-board{height:100%;width:auto;aspect-ratio:1/2}
-#gkbn-game:fullscreen .gk-controls{padding-bottom:max(12px,env(safe-area-inset-bottom))}
-@media(max-width:700px){
- #gkbn-game{border-radius:15px}
- #gkbn-game .gk-header{padding:10px;gap:7px}
- #gkbn-game .gk-brand{font-size:9px;letter-spacing:1px}
- #gkbn-game .gk-brand-mark{width:24px;height:24px;margin-right:3px}
- #gkbn-game .gk-title{font-size:clamp(13px,3.6vw,20px);letter-spacing:.5px}
- #gkbn-game .gk-iconbtn{min-width:35px;height:35px;border-radius:10px}
- #gkbn-game .gk-layout{grid-template-columns:minmax(0,1fr);gap:9px;padding:10px}
- #gkbn-game .gk-center{grid-row:2}
- #gkbn-game .gk-side{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
- #gkbn-game .gk-card{padding:8px;border-radius:11px}
- #gkbn-game .gk-label{font-size:8px;letter-spacing:1px}
- #gkbn-game .gk-score{font-size:20px}
- #gkbn-game .gk-mini-value{font-size:16px}
- #gkbn-game .gk-next-stack{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin-top:5px}
- #gkbn-game .gk-next-canvas{height:42px}
- #gkbn-game .gk-board-wrap{width:min(100%,min(76vw,calc((100dvh - 350px)/2)));padding:5px}
- #gkbn-game .gk-controls{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;padding:0 10px 11px}
- #gkbn-game .gk-btn{min-height:45px;font-size:11px}
- #gkbn-game .gk-footer{padding:0 11px 12px}
- #gkbn-game:fullscreen .gk-layout{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:8px;padding:8px}
- #gkbn-game:fullscreen .gk-center{grid-column:2;grid-row:1}
- #gkbn-game:fullscreen .gk-side{grid-column:1;grid-row:1;grid-template-columns:1fr}
- #gkbn-game:fullscreen .gk-next-stack{grid-template-columns:1fr}
- #gkbn-game:fullscreen .gk-next-canvas{height:46px}
- #gkbn-game:fullscreen .gk-board-wrap{width:auto;height:min(100%,calc(100dvh - 175px));max-width:100%;aspect-ratio:1/2}
- #gkbn-game:fullscreen #gkbn-board{height:100%;width:auto;max-width:100%;aspect-ratio:1/2}
- #gkbn-game:fullscreen .gk-controls{grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;padding:0 6px 8px}
- #gkbn-game:fullscreen .gk-btn{min-height:42px;font-size:9px}
-}
-@media(max-width:360px){
- #gkbn-game .gk-brand{display:none}
- #gkbn-game .gk-board-wrap{width:min(100%,calc((100dvh - 380px)/2))}
- #gkbn-game .gk-controls{gap:5px}
- #gkbn-game .gk-btn{font-size:10px}
-}
-@media(orientation:landscape) and (max-height:540px){
- #gkbn-game .gk-header{padding:5px 10px}
- #gkbn-game .gk-layout{grid-template-columns:100px minmax(0,1fr) 100px;padding:6px;gap:7px}
- #gkbn-game .gk-board-wrap{width:auto;height:calc(100dvh - 150px);aspect-ratio:1/2}
- #gkbn-game #gkbn-board{height:100%;width:auto;aspect-ratio:1/2}
- #gkbn-game .gk-controls{padding:0 8px 6px;gap:5px}
- #gkbn-game .gk-btn{min-height:36px}
- #gkbn-game .gk-card{padding:6px}
- #gkbn-game .gk-next-canvas{height:43px}
-}
-
-/* Fullscreen play layout: compact HUD on one line, large centered board, controls below. */
-#gkbn-game:fullscreen{height:100dvh;min-height:100dvh;max-height:100dvh;overflow:hidden;display:flex;flex-direction:column;padding:0;border:0;border-radius:0}
-#gkbn-game:fullscreen .gk-header{flex:0 0 auto;padding:6px 10px;gap:8px;min-height:48px}
-#gkbn-game:fullscreen .gk-layout{flex:1 1 auto;min-height:0;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);gap:5px;padding:5px 8px}
-#gkbn-game:fullscreen .gk-layout>.gk-side:first-child{display:flex;align-items:stretch;gap:5px;order:0;min-width:0;overflow:hidden}
-#gkbn-game:fullscreen .gk-layout>.gk-side:first-child .gk-card{flex:1;min-width:0;padding:5px 8px;display:flex;flex-direction:column;justify-content:center}
-#gkbn-game:fullscreen .gk-layout>.gk-side:first-child .gk-score{font-size:clamp(14px,2.4vh,23px);line-height:1.15}
-#gkbn-game:fullscreen .gk-layout>.gk-side:first-child .gk-mini-value{font-size:clamp(13px,2.2vh,20px);margin-top:1px}
-#gkbn-game:fullscreen .gk-layout>.gk-center{order:1;min-height:0;align-items:center;overflow:hidden}
-#gkbn-game:fullscreen .gk-layout>.gk-side:last-child{display:none}
-#gkbn-game:fullscreen .gk-board-wrap{width:auto;height:100%;max-height:100%;max-width:min(100%,calc((100dvh - 165px)/2));aspect-ratio:1/2;padding:4px;flex:0 1 auto}
-#gkbn-game:fullscreen #gkbn-board{height:100%;width:auto;max-width:100%;aspect-ratio:1/2}
-#gkbn-game:fullscreen .gk-controls{flex:0 0 auto;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;padding:0 8px 6px}
-#gkbn-game:fullscreen .gk-btn{min-height:clamp(36px,6.5vh,48px);font-size:clamp(9px,1.5vh,12px);padding:3px}
-#gkbn-game:fullscreen .gk-btn-symbol{font-size:clamp(13px,2.2vh,18px)}
-#gkbn-game:fullscreen .gk-footer{flex:0 0 auto;padding:2px 8px 5px;font-size:9px}
 #gkbn-game .gk-help-tabs{display:flex;gap:8px;margin-bottom:12px}
 #gkbn-game .gk-help-tab{flex:1;padding:10px 8px;border:1px solid #345579;border-radius:10px;background:#0b1530;font-weight:900}
 #gkbn-game .gk-help-tab.active{background:linear-gradient(100deg,#12394c,#25204b);border-color:#35e7ff;color:#8ff5ff}
@@ -137,58 +75,98 @@
 #gkbn-game .gk-help-content ul{padding-left:19px;margin:5px 0 12px}
 #gkbn-game .gk-help-content li{margin:4px 0}
 #gkbn-game .gk-help-content kbd{display:inline-block;padding:1px 6px;border:1px solid #426184;border-radius:5px;background:#081226;color:#fff;font:inherit;font-size:11px}
-@media(max-width:700px){
- #gkbn-game:fullscreen .gk-header{padding:4px 6px;gap:5px}
- #gkbn-game:fullscreen .gk-brand{font-size:8px;letter-spacing:.5px}
- #gkbn-game:fullscreen .gk-brand-mark{width:21px;height:21px}
- #gkbn-game:fullscreen .gk-title{font-size:clamp(11px,3.3vw,17px)}
- #gkbn-game:fullscreen .gk-iconbtn{min-width:31px;height:31px;font-size:15px}
- #gkbn-game:fullscreen .gk-layout{padding:4px 5px;gap:4px}
- #gkbn-game:fullscreen .gk-layout>.gk-side:first-child{gap:3px}
- #gkbn-game:fullscreen .gk-layout>.gk-side:first-child .gk-card{padding:4px;min-width:0}
- #gkbn-game:fullscreen .gk-label{font-size:7px;letter-spacing:.4px}
- #gkbn-game:fullscreen .gk-layout>.gk-side:first-child .gk-score{font-size:clamp(12px,3.5vw,17px)}
- #gkbn-game:fullscreen .gk-layout>.gk-side:first-child .gk-mini-value{font-size:clamp(11px,3.2vw,16px)}
- #gkbn-game:fullscreen .gk-board-wrap{max-width:min(100%,calc((100dvh - 160px)/2));padding:3px}
- #gkbn-game:fullscreen .gk-controls{gap:3px;padding:0 5px 4px}
- #gkbn-game:fullscreen .gk-btn{min-height:35px;font-size:8px;letter-spacing:0;border-radius:8px}
- #gkbn-game:fullscreen .gk-btn-symbol{font-size:13px;margin-bottom:0}
- #gkbn-game:fullscreen .gk-footer{font-size:8px}
+
+/* Fullscreen Mode: Keep Header + Top Stats visible at top, large Board centered below */
+#gkbn-game:fullscreen,
+#gkbn-game:-webkit-full-screen,
+#gkbn-game.is-fullscreen{
+ position:fixed;
+ inset:0;
+ width:100vw;
+ height:100dvh;
+ max-width:none;
+ border:0;
+ border-radius:0;
+ padding-top:env(safe-area-inset-top,0px);
+ padding-bottom:env(safe-area-inset-bottom,0px);
+ background:#050816;
+ overflow:hidden;
+ display:flex;
+ flex-direction:column;
 }
-@media(orientation:landscape) and (max-height:520px){
- #gkbn-game:fullscreen .gk-header{min-height:38px;padding:3px 8px}
- #gkbn-game:fullscreen .gk-layout{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);padding:3px 6px;gap:3px}
- #gkbn-game:fullscreen .gk-layout>.gk-side:first-child .gk-card{padding:2px 7px}
- #gkbn-game:fullscreen .gk-board-wrap{max-width:min(100%,calc((100dvh - 118px)/2))}
- #gkbn-game:fullscreen .gk-controls{padding-bottom:3px}
- #gkbn-game:fullscreen .gk-btn{min-height:30px}
- #gkbn-game:fullscreen .gk-footer{display:none}
+#gkbn-game:fullscreen .gk-header,
+#gkbn-game:-webkit-full-screen .gk-header,
+#gkbn-game.is-fullscreen .gk-header{
+ flex:0 0 auto;
+ padding:8px 12px;
+}
+#gkbn-game:fullscreen .gk-layout,
+#gkbn-game:-webkit-full-screen .gk-layout,
+#gkbn-game.is-fullscreen .gk-layout{
+ flex:1 1 auto;
+ min-height:0;
+ display:flex;
+ flex-direction:column;
+ gap:8px;
+ padding:8px 10px 12px;
+ overflow:hidden;
+}
+#gkbn-game:fullscreen .gk-side,
+#gkbn-game:-webkit-full-screen .gk-side,
+#gkbn-game.is-fullscreen .gk-side{
+ flex:0 0 auto;
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:6px;
+ width:100%;
+ max-width:520px;
+ margin:0 auto;
+}
+
+@media(max-width:420px){
+ #gkbn-game .gk-brand-text{display:none}
+ #gkbn-game .gk-brand-mark{margin-right:0}
+ #gkbn-game .gk-header{padding:7px 8px;gap:5px}
+ #gkbn-game .gk-iconbtn{width:32px;height:32px;font-size:14px;border-radius:9px}
+ #gkbn-game .gk-layout{padding:6px 8px 8px;gap:6px}
+ #gkbn-game .gk-side{gap:5px}
+ #gkbn-game .gk-card{padding:5px 7px;border-radius:9px}
+ #gkbn-game .gk-next-canvas{height:32px}
 }
 </style>
 </head>
-<body style="margin:0;background:#03050d;padding:8px">
+<body>
 <div id="gkbn-game" aria-label="Block Blast Neon game">
  <div class="gk-stars"></div>
  <header class="gk-header">
-  <div class="gk-brand"><span class="gk-brand-mark">GK</span>GAMERKIE</div>
+  <div class="gk-brand"><span class="gk-brand-mark">GK</span><span class="gk-brand-text">GAMERKIE</span></div>
   <h1 class="gk-title">BLOCK BLAST <em>NEON</em></h1>
-  <button class="gk-iconbtn" id="gkbn-sound-indicator" aria-label="Sound status" title="Toggle sound">♫</button>
-  <button class="gk-iconbtn" id="gkbn-settings-open" aria-label="Settings" title="Settings">⚙</button>
-  <button class="gk-iconbtn" id="gkbn-fullscreen" aria-label="Enter fullscreen" title="Fullscreen">⛶</button>
+  <div class="gk-header-actions">
+   <button class="gk-iconbtn" id="gkbn-pause" aria-label="Pause game" title="Pause / Resume">Ⅱ</button>
+   <button class="gk-iconbtn" id="gkbn-sound-indicator" aria-label="Sound status" title="Toggle sound">♫</button>
+   <button class="gk-iconbtn" id="gkbn-settings-open" aria-label="Settings" title="Settings">⚙</button>
+   <button class="gk-iconbtn" id="gkbn-fullscreen" aria-label="Enter fullscreen" title="Fullscreen">⛶</button>
+  </div>
  </header>
  <main class="gk-layout">
-  <aside class="gk-side">
+  <aside class="gk-side" aria-label="Game stats">
    <section class="gk-card"><div class="gk-label">Score</div><div class="gk-score" id="gkbn-score">0</div></section>
    <section class="gk-card"><div class="gk-label">Best Score</div><div class="gk-mini-value" id="gkbn-best">0</div></section>
    <section class="gk-card"><div class="gk-label">Level</div><div class="gk-mini-value" id="gkbn-level">1</div></section>
    <section class="gk-card"><div class="gk-label">Lines Cleared</div><div class="gk-mini-value" id="gkbn-lines">0</div></section>
-   <section class="gk-card"><div class="gk-label">Next Blocks</div><div class="gk-next-stack"><canvas class="gk-next-canvas" id="gkbn-next0" width="120" height="65"></canvas><canvas class="gk-next-canvas" id="gkbn-next1" width="120" height="65"></canvas><canvas class="gk-next-canvas" id="gkbn-next2" width="120" height="65"></canvas></div></section>
+   <section class="gk-card gk-card-next"><div class="gk-label">Next Blocks</div><div class="gk-next-stack"><canvas class="gk-next-canvas" id="gkbn-next0" width="120" height="65"></canvas><canvas class="gk-next-canvas" id="gkbn-next1" width="120" height="65"></canvas><canvas class="gk-next-canvas" id="gkbn-next2" width="120" height="65"></canvas></div></section>
   </aside>
-  <section class="gk-center">
-   <div class="gk-board-wrap">
+  <section class="gk-center" id="gkbn-center">
+   <div class="gk-board-wrap" id="gkbn-board-wrap">
     <canvas id="gkbn-board" width="300" height="600" aria-label="Game board. Tap to rotate."></canvas>
     <div class="gk-overlay" id="gkbn-start-overlay">
-     <div class="gk-overlay-box"><div style="font-size:38px;margin-bottom:8px">▦</div><h2 class="gk-over-title">BLOCK BLAST<br><span style="color:#ff4fd8">NEON</span></h2><p class="gk-over-copy">Stack the neon blocks. Clear lines. Chase your high score.</p><button class="gk-primary" id="gkbn-start">▶ START GAME</button><p class="gk-over-copy" style="margin:14px 0 0">← → Move · ↑ / X Rotate · Z Reverse · Space Drop</p></div>
+     <div class="gk-overlay-box">
+      <div style="font-size:32px;margin-bottom:6px">▦</div>
+      <h2 class="gk-over-title">BLOCK BLAST<br><span style="color:#ff4fd8">NEON</span></h2>
+      <p class="gk-over-copy">Stack the neon blocks. Clear lines. Chase your high score.</p>
+      <button class="gk-primary" id="gkbn-start">▶ START GAME</button>
+      <p class="gk-over-copy" style="margin:12px 0 0;font-size:11px">Tap Rotate · Swipe Move / Drop</p>
+     </div>
     </div>
     <div class="gk-overlay" id="gkbn-pause-overlay" hidden>
      <div class="gk-overlay-box"><h2 class="gk-over-title">PAUSED</h2><p class="gk-over-copy">Take a breath. Your board is waiting.</p><button class="gk-primary" id="gkbn-resume">▶ RESUME</button><button class="gk-secondary" id="gkbn-restart-pause">↻ RESTART</button></div>
@@ -198,21 +176,7 @@
     </div>
    </div>
   </section>
-  <aside class="gk-side">
-
-   <section class="gk-card"><div class="gk-label">Controls</div><div style="font-size:11px;line-height:1.8;color:#9cb7d8;margin-top:7px">← → Move<br>↑ / X Rotate<br>Z Reverse rotate<br>↓ Soft drop<br>SPACE Hard drop<br>P Pause</div></section>
-   <button class="gk-btn gold" id="gkbn-pause-side">Ⅱ PAUSE</button>
-  </aside>
  </main>
- <nav class="gk-controls" aria-label="Game controls">
-  <button class="gk-btn cyan" id="gkbn-left"><span class="gk-btn-symbol">◀</span>LEFT</button>
-  <button class="gk-btn purple" id="gkbn-rotate"><span class="gk-btn-symbol">⟳</span>ROTATE</button>
-  <button class="gk-btn cyan" id="gkbn-right"><span class="gk-btn-symbol">▶</span>RIGHT</button>
-  <button class="gk-btn" id="gkbn-down"><span class="gk-btn-symbol">⬇</span>HOLD DOWN</button>
-  <button class="gk-btn pink" id="gkbn-drop"><span class="gk-btn-symbol">⇊</span>HARD DROP</button>
-  <button class="gk-btn gold" id="gkbn-pause"><span class="gk-btn-symbol">Ⅱ</span>PAUSE</button>
- </nav>
- <footer class="gk-footer"><span>GAMERKIE ARCADE · ORIGINAL NEON EDITION</span><span id="gkbn-audio-status">SOUND READY AFTER TAP</span></footer>
  <section class="gk-modal" id="gkbn-settings-modal" hidden>
   <div class="gk-modal-box" role="dialog" aria-modal="true" aria-labelledby="gkbn-settings-title">
    <div class="gk-modal-head"><h2 id="gkbn-settings-title">⚙ Game Settings</h2><button class="gk-close" id="gkbn-settings-close" aria-label="Close settings">×</button></div>
@@ -229,7 +193,7 @@
    </div>
    <div id="gkbn-help-page" class="gk-help-content" hidden>
     <h3>🎯 Goal</h3><p>Move falling neon blocks, complete horizontal lines, clear them from the board and earn the highest score. The game gets faster as your level rises.</p>
-    <h3>📱 Touch controls</h3><ul><li><b>Tap the board:</b> rotate the current block.</li><li><b>Swipe left / right:</b> move the block in that direction. Longer swipes move it farther.</li><li><b>Swipe down:</b> soft-drop the block; a quick long downward swipe performs a hard drop.</li><li><b>Buttons below the board:</b> LEFT, ROTATE, RIGHT, HOLD DOWN, HARD DROP and PAUSE.</li></ul>
+    <h3>📱 Touch controls</h3><ul><li><b>Tap the board:</b> rotate the current block.</li><li><b>Swipe left / right:</b> move the block in that direction. Longer swipes move it farther.</li><li><b>Swipe down:</b> soft-drop the block; a quick long downward swipe performs a hard drop.</li><li><b>Top bar buttons:</b> Pause (Ⅱ), Sound (♫), Settings (⚙) and Fullscreen (⛶).</li></ul>
     <h3>⌨️ Keyboard controls</h3><ul><li><kbd>←</kbd> / <kbd>→</kbd> Move left or right.</li><li><kbd>↑</kbd> or <kbd>X</kbd> Rotate clockwise; <kbd>Z</kbd> rotates backwards.</li><li><kbd>↓</kbd> Soft drop; hold it to move down faster.</li><li><kbd>SPACE</kbd> Hard drop straight down.</li><li><kbd>P</kbd> Pause or resume; <kbd>ESC</kbd> exits fullscreen or closes this panel.</li></ul>
     <h3>⭐ Score, levels and speed</h3><ul><li>Clearing lines awards points; clearing multiple lines at once earns more.</li><li>Every 10 cleared lines advances a level.</li><li>Each new level increases automatic falling speed. Soft drop and hard drop help you control the pace.</li><li>Your best score is saved on this device.</li></ul>
     <h3>🧩 Next blocks and ghost piece</h3><p>The NEXT BLOCKS previews show upcoming pieces. The translucent outline on the board shows where the active block will land if dropped.</p>
@@ -245,6 +209,7 @@
 const root=document.getElementById('gkbn-game');
 const $=id=>document.getElementById(id);
 const canvas=$('gkbn-board'),ctx=canvas.getContext('2d');
+const boardWrap=$('gkbn-board-wrap'),centerArea=$('gkbn-center');
 const COLS=10,ROWS=20;
 const COLORS={I:'#35e7ff',O:'#ffd166',T:'#b76bff',S:'#6dff9a',Z:'#ff557e',J:'#4388ff',L:'#ff9b45'};
 const SHAPES={
@@ -262,7 +227,7 @@ let settings={...defaults};try{settings={...settings,...JSON.parse(localStorage.
 let board=[],active=null,queue=[],score=0,best=0,level=1,lines=0,state='start';
 let lastTime=0,gravityAcc=0,softAcc=0,moveDir=0,moveHeldAt=0,moveRepeatAt=0,downHeld=false,gameStartedAt=0;
 let particles=[],clearingRows=[],clearAnim=0,shake=0,animTime=0,renderW=300,renderH=600,cell=30;
-let audioCtx=null,masterGain=null,sfxGain=null,musicGain=null,musicTimer=null,musicStep=0,activeOsc=[];
+let audioCtx=null,masterGain=null,sfxGain=null,musicGain=null,musicTimer=null,musicStep=0;
 try{best=Number(localStorage.getItem(STORE.best)||0)||0}catch(e){}
 $('gkbn-best').textContent=best.toLocaleString();
 function saveSettings(){try{localStorage.setItem(STORE.settings,JSON.stringify(settings))}catch(e){}}
@@ -279,7 +244,7 @@ function tone(freq,duration=.08,type='sine',volume=.3,slide=0){
 function sfx(kind){if(!audioCtx||!settings.sfx)return;const sounds={move:()=>tone(220,.045,'square',.10,45),rotate:()=>tone(360,.09,'triangle',.18,180),soft:()=>tone(140,.035,'sine',.06,-20),drop:()=>{tone(180,.16,'sawtooth',.2,-120);tone(80,.18,'triangle',.12,-35)},land:()=>tone(100,.07,'triangle',.14,-35),clear:()=>{[440,660,880,1100].forEach((f,i)=>setTimeout(()=>tone(f,.18,'sine',.22,150),i*35))},level:()=>[523,659,784].forEach((f,i)=>setTimeout(()=>tone(f,.16,'triangle',.18,100),i*90)),over:()=>[392,330,262,196].forEach((f,i)=>setTimeout(()=>tone(f,.22,'sawtooth',.15,-60),i*130)),click:()=>tone(520,.045,'sine',.1,40)};if(sounds[kind])sounds[kind]()}
 function startMusic(){
  if(!audioCtx||!settings.music||musicTimer)return;
- const notes=[110,164.81,220,164.81,130.81,196,261.63,196,146.83,220,293.66,220,130.81,196,246.94,196];
+ const notes=[110,164.81,220,164.81,130.81,196,261.63,196,146.83,196,293.66,220,130.81,196,246.94,196];
  musicTimer=setInterval(()=>{
   if(!audioCtx||!settings.music||state==='start'||state==='over')return;
   const f=notes[musicStep++%notes.length],now=audioCtx.currentTime;
@@ -287,21 +252,21 @@ function startMusic(){
  },250);
 }
 function stopMusic(){if(musicTimer){clearInterval(musicTimer);musicTimer=null}}
-function musicState(){if(settings.music){if(audioCtx)startMusic()}else stopMusic();updateAudioGains();$('gkbn-audio-status').textContent=(settings.sfx?'SFX ON':'SFX OFF')+' · '+(settings.music?'MUSIC ON':'MUSIC OFF');$('gkbn-sound-indicator').textContent=(settings.sfx||settings.music)?'♫':'♩'}
+function musicState(){if(settings.music){if(audioCtx)startMusic()}else stopMusic();updateAudioGains();$('gkbn-sound-indicator').textContent=(settings.sfx||settings.music)?'♫':'♩'}
 function interaction(){audioInit();if(audioCtx&&audioCtx.state==='suspended')audioCtx.resume();musicState()}
 function vibrate(ms=15){if(settings.vibe&&navigator.vibrate)try{navigator.vibrate(ms)}catch(e){}}
 function matrixCopy(m){return m.map(r=>r.slice())}
 function rotateMatrix(m,dir=1){const n=m.length,out=Array.from({length:n},()=>Array(n).fill(0));for(let y=0;y<n;y++)for(let x=0;x<n;x++)out[dir===1?x:n-1-x][dir===1?n-1-y:y]=m[y][x];return out}
 function makePiece(type){const shape=matrixCopy(SHAPES[type]);return {type,shape,x:Math.floor((COLS-shape[0].length)/2),y:-1,color:COLORS[type]}}
 function fillQueue(){while(queue.length<5){const types=Object.keys(SHAPES);for(let i=types.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[types[i],types[j]]=[types[j],types[i]]}queue.push(...types)}}
-function spawn(){fillQueue();active=makePiece(queue.shift());fillQueue();gravityAcc=0;softAcc=0;drawPreviews();if(collides(active,active.x,active.y,active.shape)){state='over';$('gkbn-over-overlay').hidden=false;$('gkbn-final-score').textContent=score.toLocaleString();saveBest();$('gkbn-final-best').textContent=best.toLocaleString();sfx('over');return false}return true}
-function resetGame(){board=Array.from({length:ROWS},()=>Array(COLS).fill(null));queue=[];particles=[];clearingRows=[];clearAnim=0;score=0;level=1;lines=0;gravityAcc=0;softAcc=0;moveDir=0;downHeld=false;gameStartedAt=performance.now();state='playing';$('gkbn-start-overlay').hidden=true;$('gkbn-pause-overlay').hidden=true;$('gkbn-over-overlay').hidden=true;updateStats();fillQueue();spawn();interaction();lastTime=performance.now()}
+function spawn(){fillQueue();active=makePiece(queue.shift());fillQueue();gravityAcc=0;softAcc=0;drawPreviews();if(collides(active,active.x,active.y,active.shape)){state='over';$('gkbn-over-overlay').hidden=false;$('gkbn-final-score').textContent=score.toLocaleString();saveBest();$('gkbn-final-best').textContent=best.toLocaleString();$('gkbn-pause').textContent='Ⅱ';sfx('over');return false}return true}
+function resetGame(){board=Array.from({length:ROWS},()=>Array(COLS).fill(null));queue=[];particles=[];clearingRows=[];clearAnim=0;score=0;level=1;lines=0;gravityAcc=0;softAcc=0;moveDir=0;downHeld=false;gameStartedAt=performance.now();state='playing';$('gkbn-start-overlay').hidden=true;$('gkbn-pause-overlay').hidden=true;$('gkbn-over-overlay').hidden=true;$('gkbn-pause').textContent='Ⅱ';updateStats();fillQueue();spawn();interaction();lastTime=performance.now()}
 function collides(p,nx,ny,shape=p.shape){for(let y=0;y<shape.length;y++)for(let x=0;x<shape[y].length;x++)if(shape[y][x]){const bx=nx+x,by=ny+y;if(bx<0||bx>=COLS||by>=ROWS)return true;if(by>=0&&board[by][bx])return true}return false}
 function move(dx){if(state!=='playing'||!active)return false;if(!collides(active,active.x+dx,active.y)){active.x+=dx;sfx('move');return true}return false}
 function rotate(dir=1){if(state!=='playing'||!active)return;const shape=rotateMatrix(active.shape,dir),kicks=[0,-1,1,-2,2,-3,3];for(const k of kicks){if(!collides(active,active.x+k,active.y,shape)){active.shape=shape;active.x+=k;sfx('rotate');return}}}
 function stepDown(soft=false){if(!active||state!=='playing')return false;if(!collides(active,active.x,active.y+1)){active.y++;if(soft){score++;updateStats();sfx('soft')}return true}lockPiece();return false}
 function hardDrop(){if(state!=='playing'||!active)return;let d=0;while(!collides(active,active.x,active.y+1)){active.y++;d++}score+=d*2;spawnParticles(active.x,active.y,active.shape,active.color,Math.min(40,8+d));sfx('drop');vibrate(25);lockPiece()}
-function lockPiece(){if(!active)return;for(let y=0;y<active.shape.length;y++)for(let x=0;x<active.shape[y].length;x++)if(active.shape[y][x]){const by=active.y+y,bx=active.x+x;if(by<0){state='over';$('gkbn-over-overlay').hidden=false;$('gkbn-final-score').textContent=score.toLocaleString();saveBest();$('gkbn-final-best').textContent=best.toLocaleString();sfx('over');active=null;return}if(by<ROWS&&bx>=0&&bx<COLS)board[by][bx]=active.color}
+function lockPiece(){if(!active)return;for(let y=0;y<active.shape.length;y++)for(let x=0;x<active.shape[y].length;x++)if(active.shape[y][x]){const by=active.y+y,bx=active.x+x;if(by<0){state='over';$('gkbn-over-overlay').hidden=false;$('gkbn-final-score').textContent=score.toLocaleString();saveBest();$('gkbn-final-best').textContent=best.toLocaleString();$('gkbn-pause').textContent='Ⅱ';sfx('over');active=null;return}if(by<ROWS&&bx>=0&&bx<COLS)board[by][bx]=active.color}
  spawnParticles(active.x,active.y,active.shape,active.color,8);sfx('land');active=null;
  const full=[];for(let y=0;y<ROWS;y++)if(board[y].every(Boolean))full.push(y);
  if(full.length){clearingRows=full;clearAnim=0.20;score+=([0,100,300,500,800][full.length]||full.length*250)*level;lines+=full.length;const old=level;level=Math.floor(lines/10)+1;if(level>old)sfx('level');sfx('clear');vibrate(35);spawnClearParticles(full);updateStats();saveBest()}else{saveBest();updateStats();spawn()}
@@ -314,9 +279,29 @@ function lighten(hex,amt){return tint(hex,amt)}function darken(hex,amt){return t
 function tint(hex,amt){let c=hex.replace('#','');let n=parseInt(c,16);let r=Math.max(0,Math.min(255,(n>>16)+amt)),g=Math.max(0,Math.min(255,((n>>8)&255)+amt)),b=Math.max(0,Math.min(255,(n&255)+amt));return `rgb(${r},${g},${b})`}
 function spawnParticles(px,py,shape,color,count){for(let y=0;y<shape.length;y++)for(let x=0;x<shape[y].length;x++)if(shape[y][x]&&particles.length<count+160){for(let i=0;i<(count>20?2:1);i++)particles.push({x:(px+x+.5)*cell,y:(py+y+.5)*cell,vx:(Math.random()-.5)*cell*7,vy:(Math.random()-.7)*cell*7,life:.35+Math.random()*.45,max:.8,color,size:2+Math.random()*3})}}
 function spawnClearParticles(rows){rows.forEach(y=>{for(let x=0;x<COLS;x++)for(let i=0;i<4;i++)particles.push({x:(x+.5)*cell,y:(y+.5)*cell,vx:(Math.random()-.5)*cell*9,vy:(Math.random()-.6)*cell*8,life:.45+Math.random()*.4,max:.85,color:['#35e7ff','#ff4fd8','#ffd166','#a76bff'][i],size:2+Math.random()*4})})}
-function resizeCanvas(){const rect=canvas.getBoundingClientRect();if(!rect.width||!rect.height)return;const dpr=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(rect.width*dpr);canvas.height=Math.round(rect.height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);renderW=rect.width;renderH=rect.height;cell=Math.min(renderW/COLS,renderH/ROWS);drawPreviews()}
+
+function resizeCanvas(){
+ const isFs=Boolean(document.fullscreenElement||document.webkitFullscreenElement);
+ root.classList.toggle('is-fullscreen',isFs);
+ root.style.height=window.innerHeight+'px';
+ const availW=Math.max(160,centerArea.clientWidth-4);
+ const availH=Math.max(320,centerArea.clientHeight-4);
+ const pad=10;
+ const innerH=Math.max(260,Math.min(availH-pad,(availW-pad)*2));
+ const innerW=Math.round(innerH/2);
+ boardWrap.style.width=(innerW+pad)+'px';
+ boardWrap.style.height=(innerH+pad)+'px';
+ const dpr=Math.min(window.devicePixelRatio||1,2);
+ canvas.width=Math.round(innerW*dpr);
+ canvas.height=Math.round(innerH*dpr);
+ ctx.setTransform(dpr,0,0,dpr,0,0);
+ renderW=innerW;
+ renderH=innerH;
+ cell=Math.min(renderW/COLS,renderH/ROWS);
+ drawPreviews();
+}
+
 function render(now){const w=renderW,h=renderH;ctx.clearRect(0,0,w,h);ctx.fillStyle='#050a18';ctx.fillRect(0,0,w,h);const cw=w/COLS,ch=h/ROWS;cell=Math.min(cw,ch);
- // subtle board glow and grid
  const bg=ctx.createRadialGradient(w*.5,h*.35,5,w*.5,h*.5,Math.max(w,h));bg.addColorStop(0,'#101a38');bg.addColorStop(1,'#040815');ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);
  ctx.save();if(shake>0){ctx.translate((Math.random()-.5)*shake,(Math.random()-.5)*shake);shake*=.88}
  for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++){ctx.fillStyle=(x+y)%2?'#ffffff04':'#1c8cff08';ctx.fillRect(x*cw,y*ch,cw,ch);ctx.strokeStyle='#4c82bd22';ctx.lineWidth=.6;ctx.strokeRect(x*cw+.5,y*ch+.5,cw-1,ch-1);if(board[y][x])drawBlock(ctx,x*cw,y*ch,Math.min(cw,ch),board[y][x])}
@@ -333,50 +318,68 @@ function frame(now){const dt=Math.min(.05,(now-lastTime)/1000||0);lastTime=now;a
  if(state==='playing'){
   if(clearingRows.length){clearAnim-=dt;if(clearAnim<=0)finishClear()}
   else if(active){gravityAcc+=dt;const elapsedMinutes=Math.max(0,(now-gameStartedAt)/60000);const timeFactor=Math.max(.62,1-elapsedMinutes*.045);const scoreFactor=Math.max(.62,1-score/60000);const interval=Math.max(.075,.82*Math.pow(.82,level-1)*timeFactor*scoreFactor);if(downHeld){softAcc+=dt;const repeat=.035;if(softAcc>=repeat){softAcc=0;stepDown(true)}}else if(gravityAcc>=interval){gravityAcc=0;stepDown(false)}
-   if(moveDir&&now>=moveRepeatAt){move(now>=moveHeldAt+170?moveDir:moveDir);moveRepeatAt=now+Math.max(45,115-level*3)}
+   if(moveDir&&now>=moveRepeatAt){move(moveDir);moveRepeatAt=now+Math.max(45,115-level*3)}
   }
  }
  for(let i=particles.length-1;i>=0;i--){const p=particles[i];p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=110*dt;p.life-=dt;if(p.life<=0)particles.splice(i,1)}
  render(now);requestAnimationFrame(frame)}
-function pause(){if(state!=='playing')return;state='paused';releaseInputs();$('gkbn-pause-overlay').hidden=false;$('gkbn-pause').innerHTML='<span class="gk-btn-symbol">▶</span>RESUME'}
-function resume(){if(state!=='paused')return;state='playing';$('gkbn-pause-overlay').hidden=true;$('gkbn-pause').innerHTML='<span class="gk-btn-symbol">Ⅱ</span>PAUSE';lastTime=performance.now();interaction()}
+function pause(){if(state!=='playing')return;state='paused';releaseInputs();$('gkbn-pause-overlay').hidden=false;$('gkbn-pause').textContent='▶'}
+function resume(){if(state!=='paused')return;state='playing';$('gkbn-pause-overlay').hidden=true;$('gkbn-pause').textContent='Ⅱ';lastTime=performance.now();interaction()}
 function releaseInputs(){moveDir=0;downHeld=false;softAcc=0}
 function togglePause(){if(state==='playing')pause();else if(state==='paused')resume()}
-function startMove(dir,ev){if(ev){ev.preventDefault();interaction();try{ev.currentTarget.setPointerCapture(ev.pointerId)}catch(e){}}if(state!=='playing')return;moveDir=dir;moveHeldAt=performance.now();moveRepeatAt=moveHeldAt+160;move(dir)}
-function endMove(){moveDir=0}
-function startDown(ev){if(ev){ev.preventDefault();interaction();try{ev.currentTarget.setPointerCapture(ev.pointerId)}catch(e){}}if(state!=='playing')return;downHeld=true;softAcc=0;stepDown(true)}
 function endDown(){downHeld=false;softAcc=0}
-function bindHold(id,start,end){const el=$(id);el.addEventListener('pointerdown',e=>start(e));['pointerup','pointercancel','lostpointercapture','pointerleave'].forEach(t=>el.addEventListener(t,()=>end()))}
-bindHold('gkbn-left',e=>startMove(-1,e),endMove);bindHold('gkbn-right',e=>startMove(1,e),endMove);bindHold('gkbn-down',startDown,endDown);
-$('gkbn-rotate').addEventListener('pointerdown',e=>{e.preventDefault();interaction();rotate(1)});
-$('gkbn-drop').addEventListener('pointerdown',e=>{e.preventDefault();interaction();hardDrop()});
-$('gkbn-pause').addEventListener('click',()=>{interaction();if(state==='paused')resume();else togglePause()});
-$('gkbn-pause-side').addEventListener('click',()=>{interaction();togglePause()});
+
+$('gkbn-pause').addEventListener('click',()=>{interaction();togglePause();sfx('click')});
+
 let boardGesture=null;
 canvas.addEventListener('pointerdown',e=>{e.preventDefault();interaction();if(state!=='playing')return;boardGesture={id:e.pointerId,x:e.clientX,y:e.clientY,t:performance.now()};try{canvas.setPointerCapture(e.pointerId)}catch(_){} });
 canvas.addEventListener('pointerup',e=>{if(!boardGesture||boardGesture.id!==e.pointerId)return;const g=boardGesture;boardGesture=null;const dx=e.clientX-g.x,dy=e.clientY-g.y,ax=Math.abs(dx),ay=Math.abs(dy),elapsed=performance.now()-g.t;if(state!=='playing')return;if(ax<14&&ay<14){rotate(1);return}if(ax>ay){const steps=Math.max(1,Math.min(5,Math.round(ax/42)));for(let i=0;i<steps;i++)move(dx<0?-1:1)}else if(dy>0){if(dy>95&&elapsed<420){hardDrop()}else{const steps=Math.max(1,Math.min(12,Math.round(dy/22)));for(let i=0;i<steps;i++)stepDown(true)}}else{rotate(1)}});
 canvas.addEventListener('pointercancel',()=>{boardGesture=null});
 canvas.addEventListener('contextmenu',e=>e.preventDefault());
+
 $('gkbn-start').addEventListener('click',()=>{interaction();resetGame()});
 $('gkbn-resume').addEventListener('click',()=>resume());
 $('gkbn-restart-pause').addEventListener('click',()=>{interaction();resetGame()});
 $('gkbn-restart-over').addEventListener('click',()=>{interaction();resetGame()});
-$('gkbn-home').addEventListener('click',()=>{state='start';releaseInputs();$('gkbn-over-overlay').hidden=true;$('gkbn-start-overlay').hidden=false;active=null});
+$('gkbn-home').addEventListener('click',()=>{state='start';releaseInputs();$('gkbn-over-overlay').hidden=true;$('gkbn-start-overlay').hidden=false;$('gkbn-pause').textContent='Ⅱ';active=null});
+
 function showSettingsPage(page){const help=page==='help';$('gkbn-settings-page').hidden=help;$('gkbn-help-page').hidden=!help;$('gkbn-tab-settings').classList.toggle('active',!help);$('gkbn-tab-help').classList.toggle('active',help)}
 $('gkbn-tab-settings').addEventListener('click',()=>showSettingsPage('settings'));
 $('gkbn-tab-help').addEventListener('click',()=>showSettingsPage('help'));
 $('gkbn-help-back').addEventListener('click',()=>showSettingsPage('settings'));
 function settingsModal(show){$('gkbn-settings-modal').hidden=!show;if(show){releaseInputs();showSettingsPage('settings')}}
 $('gkbn-settings-open').addEventListener('click',()=>{interaction();settingsModal(true);sfx('click')});
-$('gkbn-settings-close').addEventListener('click',()=>settingsModal(false));$('gkbn-settings-done').addEventListener('click',()=>{saveSettings();settingsModal(false);musicState()});
+$('gkbn-settings-close').addEventListener('click',()=>settingsModal(false));
+$('gkbn-settings-done').addEventListener('click',()=>{saveSettings();settingsModal(false);musicState()});
+
 function setToggle(id,key){const b=$(id);const sync=()=>{b.textContent=settings[key]?'ON':'OFF';b.classList.toggle('on',settings[key])};sync();b.addEventListener('click',()=>{settings[key]=!settings[key];sync();saveSettings();musicState();interaction()})}
 setToggle('gkbn-sfx-toggle','sfx');setToggle('gkbn-music-toggle','music');setToggle('gkbn-vibe-toggle','vibe');
 [['master','gkbn-master-vol','gkbn-master-val'],['sfxVol','gkbn-sfx-vol','gkbn-sfx-val'],['musicVol','gkbn-music-vol','gkbn-music-val']].forEach(([key,id,val])=>{const el=$(id);el.value=settings[key];$(val).textContent=settings[key]+'%';el.addEventListener('input',()=>{settings[key]=Number(el.value);$(val).textContent=el.value+'%';updateAudioGains();saveSettings()})});
 $('gkbn-sound-indicator').addEventListener('click',()=>{interaction();settings.sfx=!settings.sfx;saveSettings();musicState();$('gkbn-sfx-toggle').textContent=settings.sfx?'ON':'OFF';$('gkbn-sfx-toggle').classList.toggle('on',settings.sfx)});
-async function fullscreen(){interaction();try{if(!document.fullscreenElement){if(root.requestFullscreen)await root.requestFullscreen();else{alert('Fullscreen is not supported in this browser. You can still play in the embedded game area.')}}else if(document.exitFullscreen)await document.exitFullscreen()}catch(e){alert('Fullscreen is unavailable here. You can still play in the game area.')}resizeCanvas()}
+
+async function fullscreen(){
+ interaction();
+ try{
+  const fsEl=document.fullscreenElement||document.webkitFullscreenElement;
+  if(!fsEl){
+   if(root.requestFullscreen)await root.requestFullscreen();
+   else if(root.webkitRequestFullscreen)root.webkitRequestFullscreen();
+  }else{
+   if(document.exitFullscreen)await document.exitFullscreen();
+   else if(document.webkitExitFullscreen)document.webkitExitFullscreen();
+  }
+ }catch(e){}
+ setTimeout(resizeCanvas,80);
+}
 $('gkbn-fullscreen').addEventListener('click',fullscreen);
-document.addEventListener('fullscreenchange',()=>{const on=document.fullscreenElement===root;$('gkbn-fullscreen').textContent=on?'⛶':'⛶';$('gkbn-fullscreen').title=on?'Exit fullscreen':'Enter fullscreen';$('gkbn-fullscreen').setAttribute('aria-label',on?'Exit fullscreen':'Enter fullscreen');setTimeout(resizeCanvas,80)});
-window.addEventListener('resize',()=>setTimeout(resizeCanvas,60));
+['fullscreenchange','webkitfullscreenchange'].forEach(ev=>document.addEventListener(ev,()=>{
+ const on=Boolean(document.fullscreenElement||document.webkitFullscreenElement);
+ $('gkbn-fullscreen').title=on?'Exit fullscreen':'Enter fullscreen';
+ $('gkbn-fullscreen').setAttribute('aria-label',on?'Exit fullscreen':'Enter fullscreen');
+ setTimeout(resizeCanvas,60);
+ setTimeout(resizeCanvas,220);
+}));
+window.addEventListener('resize',()=>setTimeout(resizeCanvas,40));
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&state==='playing')pause();releaseInputs()});
 window.addEventListener('blur',releaseInputs);
 document.addEventListener('keydown',e=>{if(e.target&&/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;if(e.key==='Escape'&&$('gkbn-settings-modal').hidden===false){settingsModal(false);return}if(e.key==='ArrowLeft'||e.key==='ArrowRight'||e.key==='ArrowDown'||e.key==='ArrowUp'||e.key===' '){e.preventDefault()}if(e.repeat&&['ArrowUp','x','X','z','Z',' '].includes(e.key))return;interaction();switch(e.key){case'ArrowLeft':move(-1);break;case'ArrowRight':move(1);break;case'ArrowDown':if(state==='playing'){downHeld=true;stepDown(true)}break;case'ArrowUp':case'x':case'X':rotate(1);break;case'z':case'Z':rotate(-1);break;case' ':hardDrop();break;case'p':case'P':togglePause();break;case'Escape':if(document.fullscreenElement===root)document.exitFullscreen();break}});
